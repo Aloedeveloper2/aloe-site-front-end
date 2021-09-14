@@ -1,0 +1,8 @@
+header{
+    background-image: url('../../assets/imgs/banner-bg-03.jpg');
+    background-size: cover;
+}
+
+.head{
+    background-color: rgba(0, 0, 0, 0.3)
+}
