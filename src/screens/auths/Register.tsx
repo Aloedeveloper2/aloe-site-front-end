@@ -1,5 +1,7 @@
+import axiosInstance from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import logo from '../../assets/imgs/aloe-img/apple-touch-icon.png';
 //MaterialUI
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -14,7 +16,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
-    
+
 	paper: {
 		marginTop: theme.spacing(8),
 		display: 'flex',
@@ -35,13 +37,50 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+    
+    const history = useHistory();
+    const initialFormData = Object.freeze({
+		email: '',
+		username: '',
+		password: '',
+	});
+
+	const [formData, updateFormData] = useState(initialFormData);
+
+    const handleChange = (e: any) => {
+		updateFormData({
+			...formData,
+			// Trimming any whitespace
+			[e.target.name]: e.target.value.trim(),
+		});
+	};
+
+    const handleSubmit = (e: any) => {
+		e.preventDefault();
+		console.log(formData);
+
+		axiosInstance
+			.post(`user/register/`, {
+				email: formData.email,
+				user_name: formData.username,
+				password: formData.password,
+			})
+			.then((res) => {
+				history.push('/');
+				console.log(res);
+				console.log(res.data);
+			});
+	};
+
 	const classes = useStyles();
 
 	return (
 		<Container component="main" maxWidth="xs">
 			<CssBaseline />
 			<div className={classes.paper}>
-				<Avatar className={classes.avatar}></Avatar>
+                    <a className="navbar-brand" href="/">
+                    <img src={logo} alt="logo" height="80"/>
+                    </a>
 				<Typography component="h1" variant="h5">
 					Creer un Compte Aloe
 				</Typography>
@@ -56,6 +95,7 @@ export default function SignUp() {
 								label="Email Address"
 								name="email"
 								autoComplete="email"
+                                onChange={handleChange}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -67,6 +107,7 @@ export default function SignUp() {
 								label="Username"
 								name="username"
 								autoComplete="username"
+                                onChange={handleChange}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -79,6 +120,7 @@ export default function SignUp() {
 								type="password"
 								id="password"
 								autoComplete="current-password"
+                                onChange={handleChange}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -94,6 +136,7 @@ export default function SignUp() {
 						variant="contained"
 						color="primary"
 						className={classes.submit}
+                        onClick={handleSubmit}
 					>
 						Creer Un compte Aloe
 					</Button>

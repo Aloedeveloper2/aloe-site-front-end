@@ -11,6 +11,7 @@ import SignUp from './screens/auths/Register';
 function App() {
   return (
     <BrowserRouter>
+      <Route exact path={'/home'} component={Home}></Route>
       <Route exact path={'/'} component={SignIn}></Route>
       <Route exact path={'/register'} component={SignUp}></Route>
       <Route path={'/services'} component={Services}></Route>

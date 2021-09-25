@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Avatar from '@material-ui/core/Avatar';
+import logo from '../../assets/imgs/aloe-img/apple-touch-icon.png';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -40,7 +41,9 @@ export default function SignIn() {
 		<Container component="main" maxWidth="xs">
 			<CssBaseline />
 			<div className={classes.paper}>
-				<Avatar className={classes.avatar}></Avatar>
+        <a className="navbar-brand" href="/">
+           <img src={logo} alt="logo" height="80"/>
+        </a>
 				<Typography component="h1" variant="h5">
 					Connecter a Aloe
 				</Typography>
