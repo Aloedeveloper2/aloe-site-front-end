@@ -6,3 +6,7 @@
 #vision{
     font-size: 20px;
 }
+
+.row{
+    justify-content: 'center';
+}

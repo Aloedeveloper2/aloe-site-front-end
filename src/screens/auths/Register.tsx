@@ -43,6 +43,8 @@ export default function SignUp() {
 		email: '',
 		username: '',
 		password: '',
+        phonenumber: '',
+        password2: '',
 	});
 
 	const [formData, updateFormData] = useState(initialFormData);
@@ -110,6 +112,18 @@ export default function SignUp() {
                                 onChange={handleChange}
 							/>
 						</Grid>
+                        <Grid item xs={12}>
+							<TextField
+								variant="outlined"
+								required
+								fullWidth
+								id="phonenumber"
+								label="Phone Number"
+								name="phonenumber"
+								autoComplete="phonenumber"
+                                onChange={handleChange}
+							/>
+						</Grid>
 						<Grid item xs={12}>
 							<TextField
 								variant="outlined"
@@ -120,6 +134,19 @@ export default function SignUp() {
 								type="password"
 								id="password"
 								autoComplete="current-password"
+                                onChange={handleChange}
+							/>
+						</Grid>
+                        <Grid item xs={12}>
+							<TextField
+								variant="outlined"
+								required
+								fullWidth
+								name="password2"
+								label="Password2"
+								type="password"
+								id="password2"
+								autoComplete="password2"
                                 onChange={handleChange}
 							/>
 						</Grid>
@@ -143,7 +170,7 @@ export default function SignUp() {
 					<Grid container justify="flex-end">
 						<Grid item>
 							<Link href="/" variant="body2">
-								Already have an account? Sign in
+								Avez-vous deja un compte?Connectez-vous
 							</Link>
 						</Grid>
 					</Grid>

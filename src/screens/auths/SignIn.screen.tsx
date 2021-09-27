@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import axiosInstance from 'axios';
 import Avatar from '@material-ui/core/Avatar';
+import { useHistory } from 'react-router-dom';
 import logo from '../../assets/imgs/aloe-img/apple-touch-icon.png';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -35,6 +37,45 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
 
+
+  // initializing the histori to redirect user
+	const history = useHistory();
+	// initializing input data 
+	const initialFormData = Object.freeze({
+		email: '',
+		password: '',
+	});
+    // initializing hook
+	const [formData, updateFormData] = useState(initialFormData);
+    
+	const handleChange = (e: any) => {
+		updateFormData({
+			...formData,
+			[e.target.name]: e.target.value.trim(),
+		});
+	};
+
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+		console.log(formData);
+		
+        // axios est un outil qui va permettre de verifier les inforamtins de lutilisateur dans le backend
+		axiosInstance
+			.post(`token/`, {
+				email: formData.email,
+				password: formData.password,
+			})
+			.then((res) => {
+				localStorage.setItem('access_token', res.data.access);
+				localStorage.setItem('refresh_token', res.data.refresh);
+				axiosInstance.defaults.headers['Authorization'] =
+					'JWT ' + localStorage.getItem('access_token');
+				history.push('/home');
+				//console.log(res);
+				//console.log(res.data);
+			});
+	};
+
 	const classes = useStyles();
 
 	return (
@@ -58,6 +99,7 @@ export default function SignIn() {
 						name="email"
 						autoComplete="email"
 						autoFocus
+            onChange={handleChange}
 					/>
 					<TextField
 						variant="outlined"
@@ -69,6 +111,7 @@ export default function SignIn() {
 						type="password"
 						id="password"
 						autoComplete="current-password"
+            onChange={handleChange}
 					/>
 					<FormControlLabel
 						control={<Checkbox value="remember" color="primary" />}
@@ -80,6 +123,7 @@ export default function SignIn() {
 						variant="contained"
 						color="primary"
 						className={classes.submit}
+            onClick={handleSubmit}
 					>
 						Sign In
 					</Button>
