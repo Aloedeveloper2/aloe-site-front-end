@@ -15,7 +15,7 @@ class AboutUS extends Component{
                 <Illustration />
                 <Team />
                 <Partners />
-                <Performance />
+                {/* <Performance /> */}
                 <WhyUs />
                 <Footer />
             </>

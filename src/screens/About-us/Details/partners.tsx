@@ -5,7 +5,7 @@ class Partners extends Component{
         return(
             <section className="bg-secondary py-3">
                 <div className="container py-5">
-                    <h2 className="h2 text-white text-center py-5">Our Partner</h2>
+                    <h2 className="h2 text-white text-center py-5">Nos partenaires</h2>
                     <div className="row text-center">
                         <div className="col-md-3 mb-3">
                             <div className="card partner-wap py-5">

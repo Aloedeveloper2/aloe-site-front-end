@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Header from '../../components/Carroussel/Carroussel';
 import Footer from '../../components/Footer/Footer';
 import './services.css';
-import image1 from '../../assets/imgs/services-01.jpg';
-import image2 from '../../assets/imgs/services-02.jpg';
-import image3 from '../../assets/imgs/services-03.jpg';
-import image4 from '../../assets/imgs/services-04.jpg';
-import image5 from '../../assets/imgs/service-07.jpg';
+import image1 from '../../assets/imgs/informatique.jpg';
+import image2 from '../../assets/imgs/call-center.jpg';
+import image3 from '../../assets/imgs/commercial.jpg';
+import image4 from '../../assets/imgs/digital.jpg';
+import image5 from '../../assets/imgs/cavrab.jpg';
 
 class Services extends Component{
     render(){
@@ -28,10 +28,10 @@ class Services extends Component{
                                 <div className="card text-white">
                                     <img src={image1} className="card-img" alt="..."/>
                                     <div className="card-img-overlay">
-                                        <h5 className="card-title">Conseil stratégique</h5>
-                                        {/* <p className="card-text">
+                                        <h5 className="card-title">Service informatique</h5>
+                                        <p className="card-text">
                                             This content is a little bit longer.
-                                        </p> */}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -39,10 +39,10 @@ class Services extends Component{
                                 <div className="card text-white">
                                     <img src={image2} className="card-img" alt="..." />
                                     <div className="card-img-overlay">
-                                        <h5 className="card-title">Mise à dispotion des plateformes digitales</h5>
-                                        {/* <p className="card-text">
+                                        <h5 className="card-title">Call center</h5>
+                                        <p className="card-text">
                                             This content is a little bit longer.
-                                        </p> */}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -51,12 +51,11 @@ class Services extends Component{
                                     <img src={image3} className="card-img" alt="..." />
                                     <div className="card-img-overlay">
                                         <h5 className="card-title">
-                                            Mise en relation des administrations et des administrés,
-                                            des entreprises et leurs clientèles.
+                                            Service commercial
                                         </h5>
-                                        {/* <p className="card-text">
+                                        <p className="card-text">
                                             This content is a little bit longer.
-                                        </p> */}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -64,10 +63,10 @@ class Services extends Component{
                                 <div className="card text-white">
                                     <img src={image4} className="card-img" alt="..." />
                                     <div className="card-img-overlay">
-                                        <h5 className="card-title">Développement des communautés</h5>
-                                        {/* <p className="card-text">
+                                        <h5 className="card-title">Service digital</h5>
+                                        <p className="card-text">
                                             This content is a little bit longer.
-                                        </p> */}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -77,12 +76,10 @@ class Services extends Component{
                         <div className="feature-work container my-4">
                             <div className="row d-flex d-flex align-items-center">
                                 <div className="col-lg-5">
-                                    <h3 className="feature-work-title h4 text-muted light-300">Notre vision</h3>
-                                    <h1 className="feature-work-heading h3 py-3 semi-bold-600">Digitalisation des organisations</h1>
+                                    <h3 className="feature-work-title h4 text-muted light-300">Etendez votre business avec le réseau CAVRAB</h3>
+                                    <h1 className="feature-work-heading h3 py-3 semi-bold-600">La monnaie à votre portée</h1>
                                     <p className="feature-work-body text-muted light-300">
-                                        Notre vision est de propager et de conduire les administrations et les entreprises
-                                        vers le digital. Nous accompagnons les organisations dans l'automatisation de leurs travaux,
-                                        la facilitation de la réalisation de certaines tâches et bien d'autre encore.
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere provident quae voluptatibus dolor cum accusantium ullam eius pariatur beatae asperiores.
                                     </p>
                                     {/* <p className="feature-work-body text-muted light-300">
                                         Tout ceci est possible grâce à la mise à disposition de votre organisation
